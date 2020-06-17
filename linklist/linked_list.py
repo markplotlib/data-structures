@@ -5,6 +5,15 @@ class LinkedList:
         self.head = node
         self.length = 0 if node is None else 1
 
+    def add(self, new_n):
+        if self.head is None:
+            self.head = new_n
+        node_n = self.head
+        while node_n is not None:
+            node_n = node_n.next
+        node_n = Node(new_n)
+        self.length += 1
+
 
 if __name__ == '__main__':
     # construct linked list
@@ -14,8 +23,11 @@ if __name__ == '__main__':
     print("Empty chain has length of " + str(chain0.length))
 
     # initialize linked list
-    print("New chain, containing sequence of digits of pi ...")
     n3 = Node(3)
-    chain_pi = LinkedList(n3)
-    print("Pi chain has length of " + str(chain_pi.length))
-    print(chain_pi.head.data)
+    chain1 = LinkedList(n3)
+    print("single link chain has length of " + str(chain1.length))
+    print("value stored is", chain1.head.data)
+
+    print("Adding 2 links to original chain.")
+    chain0.add(n3); chain0.add(n3)
+    print("New length of that chain is", chain0.length)
