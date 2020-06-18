@@ -21,6 +21,30 @@ class MyTestCase(unittest.TestCase):
         # assert
         self.assertEqual(hp.heap, [])
 
+    def test_ctor_1arg_attr_wgts_equal(self):
+        # arrange
+        initial = {'a': 1}
+        # act
+        hp = Heap(initial)
+        # assert
+        self.assertEqual(hp.weights, {'a': 1})
+
+    def test_ctor_1arg_attr_place_equal(self):
+        # arrange
+        initial = {'a': 1}
+        # act
+        hp = Heap(initial)
+        # assert
+        self.assertEqual(hp.place, {'a': 0})
+
+    def test_ctor_1arg_attr_heap_equal(self):
+        # arrange
+        initial = {'a': 1}
+        # act
+        hp = Heap(initial)
+        # assert
+        self.assertEqual(hp.heap, ['a'])
+
 
 if __name__ == '__main__':
     unittest.main()
