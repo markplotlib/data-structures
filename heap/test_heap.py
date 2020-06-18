@@ -3,6 +3,7 @@ from heap import Heap
 
 
 class MyTestCase(unittest.TestCase):
+    # full test coverage of constructor in 6 cases
     def test_ctor_noargs_attr_wgts_empty(self):
         # act
         hp = Heap()
@@ -45,6 +46,7 @@ class MyTestCase(unittest.TestCase):
         # assert
         self.assertEqual(hp.heap, ['a'])
 
+    # full test coverage of empty in 2 cases
     def test_empty_length_is_0(self):
         # arrange
         hp = Heap()
@@ -57,6 +59,7 @@ class MyTestCase(unittest.TestCase):
         # assert
         self.assertFalse(hp.empty())
 
+    # full test coverage of enqueue in 4 cases
     def test_enqueue_key_is_present(self):
         # arrange
         hp = Heap({'a': 1, 'b': 10, 'c': 20})
