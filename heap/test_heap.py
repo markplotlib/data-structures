@@ -92,6 +92,30 @@ class MyTestCase(unittest.TestCase):
         # assert
         self.assertEqual(hp.weights['a'], 10)
 
+    # full test coverage of dequeue in 3 cases
+    def test_dequeue_heap_is_empty(self):
+        # arrange
+        hp = Heap()
+        # act
+        nada = hp.dequeue()
+        # assert
+        self.assertIsNone(nada)
+
+    def test_dequeue_heap_returns_key(self):
+        # arrange
+        hp = Heap({'abc': 123, 'def': 456})
+        # act
+        k, w = hp.dequeue()
+        # assert
+        self.assertEqual(k, 'abc')
+
+    def test_dequeue_heap_returns_wgt(self):
+        # arrange
+        hp = Heap({'abc': 123})
+        # act
+        k, w = hp.dequeue()
+        # assert
+        self.assertEqual(w, 123)
 
 if __name__ == '__main__':
     unittest.main()
