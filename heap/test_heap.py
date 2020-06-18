@@ -57,6 +57,37 @@ class MyTestCase(unittest.TestCase):
         # assert
         self.assertFalse(hp.empty())
 
+    def test_enqueue_key_is_present(self):
+        # arrange
+        hp = Heap({'a': 1, 'b': 10, 'c': 20})
+        # act
+        hp.enqueue('a', 1)
+        # assert
+        self.assertEqual(hp.weights['a'], 1)
+
+    def test_enqueue_key_is_new(self):
+        # arrange
+        hp = Heap({'a': 1, 'b': 10, 'c': 20})
+        # act
+        hp.enqueue('d', 50)
+        # assert
+        self.assertEqual(hp.weights['d'], 50)
+
+    def test_enqueue_key_old_wgt_is_greater(self):
+        # arrange
+        hp = Heap({'a': 5, 'b': 10, 'c': 20})
+        # act
+        hp.enqueue('a', 1)
+        # assert
+        self.assertEqual(hp.weights['a'], 1)
+
+    def test_enqueue_key_old_wgt_is_lesser(self):
+        # arrange
+        hp = Heap({'a': 2, 'b': 10, 'c': 20})
+        # act
+        hp.enqueue('a', 10)
+        # assert
+        self.assertEqual(hp.weights['a'], 10)
 
 
 if __name__ == '__main__':
