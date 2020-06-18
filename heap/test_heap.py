@@ -45,6 +45,19 @@ class MyTestCase(unittest.TestCase):
         # assert
         self.assertEqual(hp.heap, ['a'])
 
+    def test_empty_length_is_0(self):
+        # arrange
+        hp = Heap()
+        # assert
+        self.assertTrue(hp.empty())
+
+    def test_empty_length_is_1(self):
+        # arrange
+        hp = Heap({'a': 1})
+        # assert
+        self.assertFalse(hp.empty())
+
+
 
 if __name__ == '__main__':
     unittest.main()
