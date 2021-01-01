@@ -25,6 +25,7 @@ def modified_mergesort(a):
 
 
 def modified_merge(b, c, a):
+<<<<<<< HEAD
     """Merges two sorted arrays into one sorted array
     input: arrays b[0...p-1], c[0...q-1], both sorted
     output: sorted array a[0...p+q-1] of the elements of b and c
@@ -48,3 +49,6 @@ def modified_merge(b, c, a):
     else:
         a[k:p+q] = c[i:p]
     return inversions
+=======
+    pass
+>>>>>>> a9e4445b159d2ab459736932977b5137543248d7
