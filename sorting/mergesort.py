@@ -48,3 +48,9 @@ def modified_merge(b, c, a):
     else:
         a[k:p+q] = c[i:p]
     return inversions
+
+
+if __name__ == '__main__':
+    a = [2,1,4,9,3,6,5,8,7,0,-1]
+    print(modified_mergesort(a))
+    print(a)
