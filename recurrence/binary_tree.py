@@ -3,7 +3,7 @@
 def levels(tree):
     """Recursively computes the number of levels in a binary tree.
     input: binary tree as a 3-tuple (value, left, right), where empty children
-    are None
+    are represented as None
     output: number of levels in tree
     >>> levels(None)
     0
@@ -20,3 +20,17 @@ def levels(tree):
     else:
         value, left, right = tree
         return 1 + max(levels(left), levels(right))
+
+
+def preorder(tree):
+    """Recursively prints each value in the tree in preorder traversal:
+    root, left subtree, right subtree.
+    input: binary tree as a 3-tuple (value, left, right), where empty children
+    are represented as None
+    output: console output of node values in preorder traversal
+    """
+    if tree is not None:
+        value, left, right = tree
+        print(value)
+        preorder(left)
+        preorder(right)
