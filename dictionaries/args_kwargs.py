@@ -7,8 +7,15 @@ def add(*args):
         total += i
     return total
 
+def arg_printer(a, b, *args):
+    print(f'a is {a}')
+    print(f'b is {b}')
+    print(f'args is {args}')
+
 
 if __name__ == '__main__':
     print(add(3, 4))
     print(add(3, 4, 5))
     print(add(3, 4, 5, 6, 7))
+
+    arg_printer('hi', 'lo', 'huey', 'dewey', 'louie')
