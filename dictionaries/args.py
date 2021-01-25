@@ -21,6 +21,9 @@ def addition(a, b, *args, option=True):
     else:
         return total
 
+def printing(*args):
+    print(args)
+
 
 if __name__ == '__main__':
     print(add(3, 4))
@@ -31,3 +34,14 @@ if __name__ == '__main__':
     arg_printer(9, 1, 4, 5, 6)
 
     print(addition(3, 5, 7, 8, 9))
+
+    # args unpacking
+    nums = [1, 2, 3, 4, 5]
+    # without unpacking args
+    # If we pass a list in, it will stored an args TUPLE as one single element.
+    printing(nums)
+
+    # unpack args
+    # An asterisk unpacks the values in the list,
+    # the values are stored SEPARATELY in an args tuple
+    printing(*nums)
