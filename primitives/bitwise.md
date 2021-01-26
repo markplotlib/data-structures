@@ -58,3 +58,29 @@ def xor(a, b):
 >>> a ^ b
 168             # 10101000
 ```
+
+## NOT
+```Py
+>>> a = 156     # 10011100
+>>> ~a
+```
+... one would expect `a` to be:
+`99              # 01100011`
+
+However, `a` ends up as:
+
+```Py
+>>> ~a
+-157
+```
+
+> While the bitwise NOT operator seems to be the most straightforward of them all, you need to exercise extreme caution when using it in Python. Everything you’ve read so far is based on the assumption that numbers are represented with **unsigned** integers.
+
+> Note: Unsigned data types don’t let you store negative numbers such as -273 because there’s no space for a sign in a regular bit pattern. Trying to do so would result in a compilation error, a runtime exception, or an integer overflow depending on the language used.
+
+> Instead of the expected 9910, you get a negative value! The reason for this will become clear once you learn about the various [binary number representations](https://realpython.com/python-bitwise-operators/#binary-number-representations). For now, the quick-fix solution is to take advantage of the bitwise AND operator:
+
+```Py
+>>> ~a & 255    # bitmask
+99
+```
