@@ -1,3 +1,5 @@
+https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -10,9 +12,9 @@ class ListNode:
 def deleteDuplicates(head: ListNode) -> ListNode:
 	if head == None:
 		return None
-	
+
 	n = head
-	
+
 	while n.next is not None:
 		if n.val == n.next.val:
 			n.next = n.next.next
