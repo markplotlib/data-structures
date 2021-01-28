@@ -9,20 +9,34 @@ class TreeNode:
 
 class Solution:
     def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
-        # yes
-        if p is None and q is None:
-            return True
+        # L & R both empty
 
-        # fail cases
-        # only 1 null
-        if (p is None and q is not None) or (p is not None and q is None):
-            return False
+        # only 1 empty
 
-        # root-only, diff values
-        if p.val != q.val:
-            return False
+        # L & R unequal
 
-        return isSameTree(self, p.left, q.left) and isSameTree(self, p.right, q.right)
+        # left's are equal
+        # right's are equal
+
+
+        # FINISHED SOLUTION ------------------------------
+        # # yes
+        # if p is None and q is None:
+        #     return True
+        #
+        # # fail cases
+        # # only 1 null
+        # if (p is None and q is not None) or (p is not None and q is None):
+        #     return False
+        #
+        # # root-only, diff values
+        # if p.val != q.val:
+        #     return False
+        #
+        # same_lefts  = self.isSameTree( p.left, q.left)
+        # same_rights = self.isSameTree( p.right, q.right)
+        # return same_lefts and same_rights
+
 
 if __name__ == '__main__':
     c = TreeNode(3, None, None)
@@ -33,13 +47,16 @@ if __name__ == '__main__':
     d = TreeNode(1, e, f)
 
     soln = Solution()
-    expected_true = soln.isSameTree(p=a, q=b)
+
+    # import pdb; pdb.set_trace()
+
+    expected_true = soln.isSameTree(p=a, q=d)
     print(expected_true)
 
-    # _ = input('paused...')
-    # y = TreeNode(2, None, None)
-    # z = TreeNode(2, None, None)
-    # w = TreeNode(1, y, None)
-    # x = TreeNode(1, None, z)
-    # expected_false = soln.isSameTree(p=a, q=b)
-    # print(expected_false)
+    _ = input('paused...')
+    y = TreeNode(2, None, None)
+    z = TreeNode(2, None, None)
+    w = TreeNode(1, y, None)
+    x = TreeNode(1, None, z)
+    expected_false = soln.isSameTree(p=a, q=b)
+    print(expected_false)
