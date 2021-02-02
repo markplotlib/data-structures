@@ -21,6 +21,5 @@ class Solution:
         """
         if root is None:
             return 0
-        else:
-            return 1 + max(Solution().maxDepth(root.left),
-                           Solution().maxDepth(root.right))
+        return 1 + max(Solution().maxDepth(root.left),
+                       Solution().maxDepth(root.right))
