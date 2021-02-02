@@ -18,6 +18,28 @@ class Solution:
         5
         >>> Solution().romanToInt('IV')
         4
+        >>> Solution().romanToInt('IX')
+        9
+        >>> Solution().romanToInt('X')
+        10
+        >>> Solution().romanToInt('XI')
+        11
+        >>> Solution().romanToInt('XLIX')
+        49
+        >>> Solution().romanToInt('LVIII')
+        58
+        >>> Solution().romanToInt('XCVIII')
+        98
+        >>> Solution().romanToInt('CVIII')
+        108
+        >>> Solution().romanToInt('CDXCIX')
+        499
+        >>> Solution().romanToInt('CMXCIX')
+        999
+        >>> Solution().romanToInt('M')
+        1000
+        >>> Solution().romanToInt('MCMXCIX')
+        1999
         """
         # convert to list
         sum = 0
