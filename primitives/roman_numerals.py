@@ -16,16 +16,40 @@ class Solution:
         3
         >>> Solution().romanToInt('V')
         5
+        >>> Solution().romanToInt('IV')
+        4
         """
         # convert to list
         sum = 0
         s = list(s.lower())
         while len(s) > 0:
             c = s.pop(0)
+
+            # possible subtractors
             if c == 'i':
-                sum += 1
+                if len(s) > 0 and s[0] in 'vx':
+                    sum -= 1
+                else:
+                    sum += 1
+            if c == 'x':
+                if len(s) > 0 and s[0] in 'lc':
+                    sum -= 10
+                else:
+                    sum += 10
+            if c == 'c':
+                if len(s) > 0 and s[0] in 'dm':
+                    sum -= 100
+                else:
+                    sum += 100
+
+            # pure additives
             if c == 'v':
                 sum += 5
-            prev = c
+            if c == 'l':
+                sum += 50
+            if c == 'd':
+                sum += 500
+            if c == 'm':
+                sum += 1000
 
         return sum
